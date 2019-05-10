@@ -1,0 +1,20 @@
+string Solution::reverseString(string A) {
+  stack<char> rev;
+    
+    for(int i = 0; i < A.size(); i++){
+        rev.push(A[i]);
+    }
+    
+    string ans = "";
+    
+    int height = rev.size();
+    
+    
+    for(int i = height-1; i >= 0; i--){
+        ans = ans + rev.top();
+        rev.pop();
+    }
+    
+    return ans;
+}
+

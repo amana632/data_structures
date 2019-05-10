@@ -1,0 +1,22 @@
+#include <iostream>
+#include <stack>
+using namespace std;
+
+void reverse(char *C, int n){
+    stack<char> s;
+    for(int i=0; i<n; i++)
+    {s.push(C[i]);
+        
+    }
+    for(int i=0; i<n; i++)
+    {
+        C[i]=s.top();
+    s.pop();
+    }
+}
+int main(){
+    char C[100];
+cin>>C;
+reverse(C, strlen(C));
+cout<<C;
+}
