@@ -1,0 +1,45 @@
+#include <bits/stdc++.h>
+using namespace std;
+int eval(string a){
+	stack<char> s;
+	int n= a.size();
+	for(int i=0;i<n;i++){
+		if(a[i]=='*' || a[i]=='/' || a[i]=='-' || a[i]=='+' || a[i]=='%'|| a[i]=='^'){
+					//cout<<a[i];
+
+			int x=s.top();
+			int h = (int)x-'0';
+			s.pop();
+			x=s.top();
+			int l = (int)x-'0';
+		//	cout<<h<<endl;
+		//	cout<<i<<endl;
+	//	cout<<a[i];
+			int res;
+			if(a[i]=='*')
+				res=h*l;
+			else if(a[i]=='+')
+				res=h+l;
+			else if(a[i]=='-')
+				res=h-l;
+			else if(a[i]=='/')
+				res=h/l;
+			else if(a[i]=='%')
+				res=h%l;
+			else if(a[i]=='^')
+				res=h^l;
+			s.push(res);
+		//	cout<<res<<" ";
+		}
+		else s.push(a[i]);
+	}
+				int k=s.top();
+				
+
+	return k;
+}
+int main(){
+	cout<<eval("55+");
+	
+return 0;	
+}

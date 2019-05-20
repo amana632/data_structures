@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+struct node{
+	int data;
+	node *next;
+};
+node* head = NULL;
+node* createNode(int data){
+	node* temp = new node();
+	temp->data = data;
+	temp->next=head;
+	head=temp;
+	return temp;
+}
+void print(){
+	node* temp = head;
+	while(temp->next!=NULL){
+		temp=temp->next;
+		cout<<temp->data;
+	}
+}
+
+int main() {
+	createNode(1);
+	createNode(1);
+	createNode(1);
+	createNode(1);
+	createNode(1);
+	createNode(1);
+print();
+	return 0;
+}
