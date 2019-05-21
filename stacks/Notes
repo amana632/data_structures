@@ -1,0 +1,1 @@
+1. Whenever a min element question arises go for stack implementation. Try to kkep the min ele in the stack and return it.
